@@ -91,3 +91,13 @@ The final dataset (Human Resources Data) contains demographic, productivity and 
 | Resigned(Boolean) |	Whether the employee left the company or not (Yes, No) |	
 
 ## About the Dashboard:
+
+![HR Overview Dashboard](https://github.com/user-attachments/assets/8b86ad51-663b-40c9-b849-f93ada0d1990)
+
+![HR Demographic Dashboard](https://github.com/user-attachments/assets/132a6d45-058b-456b-9180-46a2754705c4)
+
+![HR Employee Directory Dashboard](https://github.com/user-attachments/assets/20ec347d-7b8a-48b0-a03f-8af2df7c691b)
+
+## Link to Tableau Dashboards:
+
+[Human Resources Dashboard - Tableau](https://public.tableau.com/views/HumanResourcesDashboard_17289276679230/Overview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
