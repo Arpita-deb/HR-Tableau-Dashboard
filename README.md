@@ -1,6 +1,6 @@
 # Human Resources Tableau Dashboard
 
-This repository contains the original and working datasets used for creating the Human Resources Dashboard in Tableau. In addition to that, the Data Cleaning and Transformation steps in Excel and a data description of the final dataset used in Tableau.
+This repository contains the original and working datasets used for creating the Human Resources Dashboards in Tableau. In addition to that, the Data Cleaning and steps and a data description of the final dataset used in Tableau are also included.
 
 ## Datasets used:
 
@@ -36,9 +36,9 @@ This dataset is obtained from data.gov and it contains 13 columns and 22,267 row
 
 5. Concatenated the first and last name of the employees into full name.
 
-6. Changed the term dates greater than 30-01-2030 with date values ranging between 2015-01-01 and 2030-01-01 to reduce the tenure and age of employees (to keep the age of the employee needs to be under 60 years and tenure less than 30).
+6. Changed the term dates greater than 30-01-2030 with date values ranging between 2015-01-01 and 2030-01-01 to reduce the tenure and age of employees (to keep the age of the employee under 60 and tenure under 30 years).
 
-7. Some employees have left the company before they were hired. To identify these dates where hire date is later in future than termination date, I used IF() function to flag these data points as R(Right) and E(Error). Then I filtered out the data points with E flag.
+7. Some employees have left the company before they were hired. To identify these dates where hire date is later in future than termination date, I used IF() function to flag these data points as R(Right) and E(Error). Then I filtered out the data points with Error(E) flag.
 
 8. Tenure is defined as the years spent between hire and last working date. For employees who've resigned, the last working date was their term data and for others it's a date in the future chosen arbitrarily (31-12-2030 in this case). To calculate Tenure, I took these steps:
 	
@@ -48,9 +48,9 @@ This dataset is obtained from data.gov and it contains 13 columns and 22,267 row
 
 9. Calculated Age of Employee by using YEARFRANC() and ROUND() funtions using Birth Date as start date and Hire Date as end date. It gave me the age of the employee at the date of hiring. 
 
-To double check the calculation, age during hiring + tenure = age during terminationof service
+To double check the calculation, age during hiring + tenure = age during termination of service
 
-10. After calculating the age, I've found some employees with an age range of 0 - 14 years. Since these ages don't make sense in the context of working professionals. I filtered these datapoints out from the dataset. Now the age range of employees is between 15 to 55.
+10. After calculating the age, I've found some employees with an age range of 0 - 14 years. Since these ages don't make sense in the context of working professionals, I filtered these datapoints out from the dataset. Now the age range of employees is between 15 to 55.
 
 11. Also the people who have been left are need to be flagged as resigned. If there is a term date, it means the employee has resigned and the Resigned column will have a flag T (True). If the term date is null it means the employee is still working for the company and thus has not resigned (False).
 
@@ -62,7 +62,7 @@ To double check the calculation, age during hiring + tenure = age during termina
 
 ## Data Description:
 
-The final dataset (Human Resources Data) contains demographic, productivity and attrition information on 17389 employees across 23 attributes. It has been created by combining two datasets. The dates of hiring ranges between 17-10-2000 to 13-10-2020. The term date i.e., the date employees terminated their service ranges from 22-08-2002 to 31-12-2030.
+The final dataset (Human Resources Data) contains demographic, productivity and attrition information on 17,389 employees across 23 attributes. It has been created by combining two datasets. The dates of hiring ranges between 17-10-2000 to 13-10-2020. The term date i.e., the date employees terminated their service ranges from 22-08-2002 to 31-12-2030.
 
 | Column(Data Type) | Description |
 | :--- | :--- |
@@ -92,9 +92,21 @@ The final dataset (Human Resources Data) contains demographic, productivity and 
 
 ## About the Dashboard:
 
+### 1. **HR Overview Dashboard**
+   
+It is designed to give an at-a-glance view of the company's workforce status and health. This dashboard offers a high-level overview of key HR metrics and general information about the company's workforce. It includes a summary of important statistics like total employee count, median tenure, retention rate, and median salary. 
+
 ![HR Overview Dashboard](https://github.com/user-attachments/assets/8b86ad51-663b-40c9-b849-f93ada0d1990)
 
+### 2. **HR Demographic Dashboard**
+
+   This dashboard provides a comprehensive view of the workforce demographics. It includes visualizations such as stacked bar charts and line chart that show the breakdown of employees by various demographic categories, such as age, gender, ethnicity, job roles, and departments. The dashboard allows users to drill down into specific categories or filter by department, role, or location to view demographic distributions in different parts of the company.
+
 ![HR Demographic Dashboard](https://github.com/user-attachments/assets/132a6d45-058b-456b-9180-46a2754705c4)
+
+### 3. **HR Employee Directory Dashboard**
+
+   This dashboard functions as an interactive directory of all employees within the organization. It list details such as employee names, job titles, departments, work related information, and office locations and employment status. The dashboard also includes filter functionalities, allowing users to look up specific employees or groups of employees based on certain criteria, like department or role. It serves as a quick reference tool for finding and managing employee information.
 
 ![HR Employee Directory Dashboard](https://github.com/user-attachments/assets/20ec347d-7b8a-48b0-a03f-8af2df7c691b)
 
